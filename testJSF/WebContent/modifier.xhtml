@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"      
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+  <f:metadata>
+	<f:viewAction action="#{clientMB.initForm}" />
+</f:metadata>    
+
+
+<h:body>
+	<h3>Modification des clients</h3>
+	
+	<h:form>
+	<h:panelGrid columns="2" cellpadding="5">
+	    <h:outputLabel for="code" value="code :" />
+		<h:inputText id="code" value="#{clientMB.selectedClient.code}"></h:inputText>
+	
+	    <h:outputLabel for="nom" value="Nom :" />
+		<h:inputText id="nom" value="#{clientMB.selectedClient.nom}"></h:inputText>
+		 
+		<h:outputLabel for="ville" value="Ville :" />
+		<h:inputText id="ville" value="#{clientMB.selectedClient.ville}"></h:inputText>
+		
+		<h:commandButton value="Modifier" action="#{clientMB.modifier}"></h:commandButton>
+	    <h:button value="Annuler" outcome="ajouter" > </h:button>
+	</h:panelGrid>
+	</h:form>
+   
+</h:body>
+
+
+</html>
+
+

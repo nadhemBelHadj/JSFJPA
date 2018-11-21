@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"      
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+      
+<f:metadata>
+	<f:viewAction action="#{clientMB.initDataTable}" />
+</f:metadata>
+
+<h:body>
+	<h3>Ajout des clients</h3>
+	<h:form>
+	<h:panelGrid columns="2" cellpadding="5">
+	    <h:outputLabel for="nom" value="Nom :" />
+		<h:inputText id="nom" value="#{clientMB.client.nom}"></h:inputText>
+		 
+		<h:outputLabel for="ville" value="Ville :" />
+		<h:inputText id="ville" value="#{clientMB.client.ville}"></h:inputText>
+		
+		<h:commandButton value="Ajouter" action="#{clientMB.add}"></h:commandButton>
+	
+	</h:panelGrid>
+	</h:form>
+	
+		<h1>Liste des clients</h1>
+    	
+    		<h:dataTable value="#{clientMB.listeClients}" var="clt" >
+    			<h:column>
+    				<!-- column header -->
+    				<f:facet name="header">Code</f:facet>
+    				<!-- row record -->
+    				<h:outputText value="#{clt.code}" />
+    			</h:column>
+    			
+    			<h:column>
+    				<f:facet name="header">Nom</f:facet>
+    				<h:outputText value="#{clt.nom}" />
+    			</h:column>
+    			
+    			<h:column>
+    				<f:facet name="header">Ville</f:facet>
+    				<h:outputText value="#{clt.ville}" />
+    			</h:column>
+    			
+    			<h:column headerText="Actions" style="text-align: center">
+						<h:button value="modifier" outcome="modifier" >
+							<f:param name="code" value="#{clt.code}" />
+				        </h:button>				
+			   </h:column>	
+			   
+			   <h:column headerText="Actions" style="text-align: center">
+						<h:button value="supprimer" outcome="supprimer" >
+							<f:param name="code" value="#{clt.code}" />
+				        </h:button>				
+			   </h:column>			
+						
+
+    		</h:dataTable>
+
+</h:body>
+
+
+</html>
+
+
