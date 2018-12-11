@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
-import javax.faces.view.ViewScoped;
+import javax.faces.bean.ViewScoped;
 import com.iset.dao.ClientDao;
 import com.iset.entities.Client;
 
@@ -43,7 +43,7 @@ public String  supprimer() {
 		
 	}
 	
-	// Récupérer le code client à modifier  et initialiser le formulaire avec ses informations
+	// RÃ©cupÃ©rer le code client Ã  modifier  et initialiser le formulaire avec ses informations
 		public void initForm() {
 			int code;		
 			code = Integer.parseInt(FacesContext.getCurrentInstance()
